@@ -1,2 +1,2 @@
 # Arity
-an old library that solves math from strings
+An old library that solves math from strings.
