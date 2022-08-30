@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Symbols
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Symbols";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../org/javia/arity/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../org/javia/arity/Symbol.html" title="class in org.javia.arity"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?org/javia/arity/Symbols.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Symbols.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+org.javia.arity</FONT>
+<BR>
+Class Symbols</H2>
+<PRE>
+Object
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>org.javia.arity.Symbols</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <B>Symbols</B><DT>extends Object</DL>
+</PRE>
+
+<P>
+Represents the collection of names (<em>symbols</em>) used for parsing an expression 
+   (the context in which the parsing takes place).<p>
+
+   Each symbol maps to either a <A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity"><CODE>Function</CODE></A> or a constant.<p>
+
+   A symbol is identified by the pair (name, arity).
+   So a constant and a function with the same name,
+   or two function with the same name but with different arity 
+   are distinct symbols.<p>
+
+   Symbols functions as a stack of <em>frames</em>: 
+   when you pop the topmost frame, all the symbols added in that frame dissapear 
+   (i.e. all the modifications done between the push and the pop are undone).<p>
+
+   Example:
+   <pre>
+   <code>
+   Symbols symbols = new Symbols();
+   symbols.eval("1+1"); //doesn't update symbols
+   symbols.define(symbols.compileWithName("f(x)=x^2")); //updates symbols
+   </code>
+   </pre>
+   <p>
+
+   <h3>Thread safety</h3>
+   The Symbols class is thread-safe
+   (the same Symbols instance can be used by multiple threads without locking).<p>
+
+   The compile() methods are synchronized, so parallel compile() calls on the same Symbols 
+   instance are serialized.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#Symbols()">Symbols</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructs a Symbols containing the built-in symbols (such as sin, log).</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#compile(java.lang.String)">compile</A></B>(String&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/FunctionAndName.html" title="class in org.javia.arity">FunctionAndName</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#compileWithName(java.lang.String)">compileWithName</A></B>(String&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compiles an expression in the context of this Symbols.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#define(org.javia.arity.FunctionAndName)">define</A></B>(<A HREF="../../../org/javia/arity/FunctionAndName.html" title="class in org.javia.arity">FunctionAndName</A>&nbsp;funAndName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a new function symbol to the top-most frame of this Symbols.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#define(java.lang.String, org.javia.arity.Complex)">define</A></B>(String&nbsp;name,
+       <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#define(java.lang.String, double)">define</A></B>(String&nbsp;name,
+       double&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a new constant symbol to the top-most frame of this Symbols.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#define(java.lang.String, org.javia.arity.Function)">define</A></B>(String&nbsp;name,
+       <A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A>&nbsp;function)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a new function symbol to the top-most frame of this Symbols.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#eval(java.lang.String)">eval</A></B>(String&nbsp;expression)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluates a simple expression (such as "1+1") and returns its value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#evalComplex(java.lang.String)">evalComplex</A></B>(String&nbsp;expression)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Symbol.html" title="class in org.javia.arity">Symbol</A>[]</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#getAllSymbols()">getAllSymbols</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return all the defined symbols.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;String[]</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#getDictionary()">getDictionary</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return all the strings that are defined in this symbols.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Symbol.html" title="class in org.javia.arity">Symbol</A>[]</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#getTopFrame()">getTopFrame</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns all the symbols that were added in the top frame.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#isDefinition(java.lang.String)">isDefinition</A></B>(String&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#popFrame()">popFrame</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pops the top frame.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Symbols.html#pushFrame()">pushFrame</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pushes a new top frame.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="Symbols()"><!-- --></A><H3>
+Symbols</H3>
+<PRE>
+public <B>Symbols</B>()</PRE>
+<DL>
+<DD>Constructs a Symbols containing the built-in symbols (such as sin, log).
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="isDefinition(java.lang.String)"><!-- --></A><H3>
+isDefinition</H3>
+<PRE>
+public static boolean <B>isDefinition</B>(String&nbsp;source)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - the expression
+<DT><B>Returns:</B><DD>true if the expression is a definition (i.e. contains a '=').<p>
+       These are definitions: "a=1+1";  "f(k)=2^k"<p>
+       These are not definitions: "1+1"; "x+1"</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(java.lang.String)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public double <B>eval</B>(String&nbsp;expression)
+            throws <A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity">SyntaxException</A></PRE>
+<DL>
+<DD>Evaluates a simple expression (such as "1+1") and returns its value.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity">SyntaxException</A></CODE> - in these cases:
+       <ul>
+       <li> the expression is not well-formed
+       <li> the expression is a definition (such as "a=1+1")
+       <li> the expression is an implicit function (such as "x+1")
+       </ul></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="evalComplex(java.lang.String)"><!-- --></A><H3>
+evalComplex</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>evalComplex</B>(String&nbsp;expression)
+                    throws <A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity">SyntaxException</A></PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity">SyntaxException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="compileWithName(java.lang.String)"><!-- --></A><H3>
+compileWithName</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/FunctionAndName.html" title="class in org.javia.arity">FunctionAndName</A> <B>compileWithName</B>(String&nbsp;source)
+                                throws <A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity">SyntaxException</A></PRE>
+<DL>
+<DD>Compiles an expression in the context of this Symbols.
+       Does not modify the symbols.
+       <p>
+
+       An expression is one of these cases (@see Symbols.isDefinition()):
+       <ul>
+       <li> constant value: 1+1
+       <li> implicit function: x+1
+       <li> constant definition: a=1+1
+       <li> function definition with explicit arguments: f(a)=a+1
+       <li> function definition with implicit arguments: f=x+1
+       </ul>
+       <p>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - the expression; may contain '=' to denote a definition (with a name).
+<DT><B>Returns:</B><DD>the function together with its eventual name.<p>
+
+       If this is not a definition (e.g. "1+1", "x^2"), the name is null.<p>
+
+       If the expression is a constant (e.g. "1+1", "a=2"), 
+       the returned Function is an instance of <A HREF="../../../org/javia/arity/Constant.html" title="class in org.javia.arity"><CODE>Constant</CODE></A>.
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity">SyntaxException</A></CODE> - if there are errors compiling the expression.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="compile(java.lang.String)"><!-- --></A><H3>
+compile</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A> <B>compile</B>(String&nbsp;source)
+                 throws <A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity">SyntaxException</A></PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity">SyntaxException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="define(java.lang.String, org.javia.arity.Function)"><!-- --></A><H3>
+define</H3>
+<PRE>
+public void <B>define</B>(String&nbsp;name,
+                   <A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A>&nbsp;function)</PRE>
+<DL>
+<DD>Adds a new function symbol to the top-most frame of this Symbols.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>name</CODE> - the name of the function (e.g. "sin")<DD><CODE>function</CODE> - the function to which the name maps</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="define(org.javia.arity.FunctionAndName)"><!-- --></A><H3>
+define</H3>
+<PRE>
+public void <B>define</B>(<A HREF="../../../org/javia/arity/FunctionAndName.html" title="class in org.javia.arity">FunctionAndName</A>&nbsp;funAndName)</PRE>
+<DL>
+<DD>Adds a new function symbol to the top-most frame of this Symbols.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>funAndName</CODE> - structure containing the function and its name</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="define(java.lang.String, double)"><!-- --></A><H3>
+define</H3>
+<PRE>
+public void <B>define</B>(String&nbsp;name,
+                   double&nbsp;value)</PRE>
+<DL>
+<DD>Adds a new constant symbol to the top-most frame of this Symbols.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>name</CODE> - the name of the constant (e.g. "pi")<DD><CODE>value</CODE> - the value of the constant</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="define(java.lang.String, org.javia.arity.Complex)"><!-- --></A><H3>
+define</H3>
+<PRE>
+public void <B>define</B>(String&nbsp;name,
+                   <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;value)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="pushFrame()"><!-- --></A><H3>
+pushFrame</H3>
+<PRE>
+public void <B>pushFrame</B>()</PRE>
+<DL>
+<DD>Pushes a new top frame.<p>
+
+       All modifications (defining new symbols) happen in the top-most frame.
+       When the frame is pop-ed the modifications that happened in it are reverted.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="popFrame()"><!-- --></A><H3>
+popFrame</H3>
+<PRE>
+public void <B>popFrame</B>()</PRE>
+<DL>
+<DD>Pops the top frame.<p>
+
+       All the modifications done since this frame was pushed are reverted.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>EmptyStackException</CODE> - if there were fewer <code>pushFrame</code> than <code>popFrame</code>.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getTopFrame()"><!-- --></A><H3>
+getTopFrame</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Symbol.html" title="class in org.javia.arity">Symbol</A>[] <B>getTopFrame</B>()</PRE>
+<DL>
+<DD>Returns all the symbols that were added in the top frame.
+ (i.e. since the most recent pushFrame()).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getAllSymbols()"><!-- --></A><H3>
+getAllSymbols</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Symbol.html" title="class in org.javia.arity">Symbol</A>[] <B>getAllSymbols</B>()</PRE>
+<DL>
+<DD>Return all the defined symbols.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getDictionary()"><!-- --></A><H3>
+getDictionary</H3>
+<PRE>
+public String[] <B>getDictionary</B>()</PRE>
+<DL>
+<DD>Return all the strings that are defined in this symbols.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../org/javia/arity/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../org/javia/arity/Symbol.html" title="class in org.javia.arity"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../org/javia/arity/SyntaxException.html" title="class in org.javia.arity"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?org/javia/arity/Symbols.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Symbols.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

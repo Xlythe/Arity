@@ -1,0 +1,1168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Complex
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Complex";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../org/javia/arity/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../org/javia/arity/CompiledFunction.html" title="class in org.javia.arity"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../org/javia/arity/Constant.html" title="class in org.javia.arity"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?org/javia/arity/Complex.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Complex.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+org.javia.arity</FONT>
+<BR>
+Class Complex</H2>
+<PRE>
+Object
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>org.javia.arity.Complex</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <B>Complex</B><DT>extends Object</DL>
+</PRE>
+
+<P>
+A complex value, composed of the real part (re) and the imaginary part (im).
+
+    All the methods that return a Complex (such as add(), mul(), etc)
+    modify the object on which they are called and return it (this), in order
+    to avoid new object creation.
+<P>
+
+<P>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#im">im</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The imaginary component.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#re">re</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The real component.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#Complex()">Complex</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Empty constructor, complex value 0.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#Complex(org.javia.arity.Complex)">Complex</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy constructor.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#Complex(double, double)">Complex</A></B>(double&nbsp;re,
+        double&nbsp;im)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor taking the real and imaginary components.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#abs()">abs</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The absolute value (length in polar coordinates).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#abs2()">abs2</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The absolute value squared.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#acos()">acos</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acos(x) = -i*log(x + i*sqrt(1-x^2)).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#acosh()">acosh</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acosh(x) = log(x+sqrt(x^2-1)).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#add(org.javia.arity.Complex)">add</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Addition.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#arg()">arg</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The argument (angle) in polar coordinates.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#asin()">asin</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asin(x) = -i*log(sqrt(1-x^2)+ix).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#asinh()">asinh</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asinh(x) = log(x+sqrt(x^2+1)).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#asReal()">asReal</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the real part if the imaginary part is zero, otherwise returns NaN.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#atan()">atan</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;atan(x) = i/2 * log((i+x)/(i-x)).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#atanh()">atanh</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;atanh(x) = log((1+x)/(1-x))/2.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#combinations(org.javia.arity.Complex)">combinations</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Combinations: C(n, k) == exp(lgamma(n) - lgamma(k) - lgamma(n-k)).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#conjugate()">conjugate</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex conjugate (negates imaginary).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#cos()">cos</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cos(a+ib) = cos(a)cosh(b) - i*sin(a)sinh(b).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#cosh()">cosh</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cosh(a+ib) = cosh(a)cos(b) + i*sinh(a)sin(b).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#div(org.javia.arity.Complex)">div</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Division.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#equals(org.javia.arity.Complex)">equals</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#exp()">exp</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex exponential.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#factorial()">factorial</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex factorial, based on lgamma().</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#gcd(org.javia.arity.Complex)">gcd</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex GCD, Greatest Common Denominator.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#isFinite()">isFinite</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True if both the real and the imaginary parts 
+        are finite (not infinite and not NaN).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#isInfinite()">isInfinite</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True if this is an infinite (and not a NaN).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#isNaN()">isNaN</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True if either real or imaginary is NaN.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#lgamma()">lgamma</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex lgamma (log Gamma).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#log()">log</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex natural logarithm.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#mod(org.javia.arity.Complex)">mod</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex modulo (integer division remainder).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#mul(org.javia.arity.Complex)">mul</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multiplication.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#negate()">negate</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Negate, i.e.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#permutations(org.javia.arity.Complex)">permutations</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Permutations: P(n, k) == exp(lgamma(n) - lgamma(n-k)).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#pow(org.javia.arity.Complex)">pow</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;y)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex power (x^y == exp(y*log(x))).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#set(org.javia.arity.Complex)">set</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets from other object (copy).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#set(double, double)">set</A></B>(double&nbsp;re,
+    double&nbsp;im)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the real and imaginary components.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#sin()">sin</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sin(a+ib) = sin(a)*cosh(b) + i*cos(a)*sinh(b).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#sinh()">sinh</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sinh(a+ib) = sinh(a)*cos(b) + i*cosh(a)*sin(b).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#sqrt()">sqrt</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex square root.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#square()">square</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex square (x^2).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#sub(org.javia.arity.Complex)">sub</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Substraction.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#tan()">tan</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tan(a+ib) = sin(2a)/(cos(2a)+cosh(2b) + i*sinh(2b)/(cos(2a)+cosh(2b)).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#tanh()">tanh</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tanh(a+ib) = sinh(2a)/(cosh(2a) + cos(2b)) + i*sin(2b)/(cosh(2a)+cos(2b)).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/Complex.html#toString()">toString</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Formats the real and imaginary part into a string.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="re"><!-- --></A><H3>
+re</H3>
+<PRE>
+public double <B>re</B></PRE>
+<DL>
+<DD>The real component.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="im"><!-- --></A><H3>
+im</H3>
+<PRE>
+public double <B>im</B></PRE>
+<DL>
+<DD>The imaginary component.
+<P>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="Complex()"><!-- --></A><H3>
+Complex</H3>
+<PRE>
+public <B>Complex</B>()</PRE>
+<DL>
+<DD>Empty constructor, complex value 0.
+<P>
+</DL>
+<HR>
+
+<A NAME="Complex(double, double)"><!-- --></A><H3>
+Complex</H3>
+<PRE>
+public <B>Complex</B>(double&nbsp;re,
+               double&nbsp;im)</PRE>
+<DL>
+<DD>Constructor taking the real and imaginary components.
+<P>
+</DL>
+<HR>
+
+<A NAME="Complex(org.javia.arity.Complex)"><!-- --></A><H3>
+Complex</H3>
+<PRE>
+public <B>Complex</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Copy constructor.
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="set(double, double)"><!-- --></A><H3>
+set</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>set</B>(double&nbsp;re,
+                   double&nbsp;im)</PRE>
+<DL>
+<DD>Sets the real and imaginary components.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="set(org.javia.arity.Complex)"><!-- --></A><H3>
+set</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>set</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Sets from other object (copy).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="toString()"><!-- --></A><H3>
+toString</H3>
+<PRE>
+public String <B>toString</B>()</PRE>
+<DL>
+<DD>Formats the real and imaginary part into a string.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>toString</CODE> in class <CODE>Object</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="asReal()"><!-- --></A><H3>
+asReal</H3>
+<PRE>
+public double <B>asReal</B>()</PRE>
+<DL>
+<DD>Returns the real part if the imaginary part is zero, otherwise returns NaN.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="conjugate()"><!-- --></A><H3>
+conjugate</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>conjugate</B>()</PRE>
+<DL>
+<DD>Complex conjugate (negates imaginary).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="negate()"><!-- --></A><H3>
+negate</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>negate</B>()</PRE>
+<DL>
+<DD>Negate, i.e. multiply with -1.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isInfinite()"><!-- --></A><H3>
+isInfinite</H3>
+<PRE>
+public final boolean <B>isInfinite</B>()</PRE>
+<DL>
+<DD>True if this is an infinite (and not a NaN).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isFinite()"><!-- --></A><H3>
+isFinite</H3>
+<PRE>
+public final boolean <B>isFinite</B>()</PRE>
+<DL>
+<DD>True if both the real and the imaginary parts 
+        are finite (not infinite and not NaN).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isNaN()"><!-- --></A><H3>
+isNaN</H3>
+<PRE>
+public final boolean <B>isNaN</B>()</PRE>
+<DL>
+<DD>True if either real or imaginary is NaN.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="equals(org.javia.arity.Complex)"><!-- --></A><H3>
+equals</H3>
+<PRE>
+public final boolean <B>equals</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="arg()"><!-- --></A><H3>
+arg</H3>
+<PRE>
+public final double <B>arg</B>()</PRE>
+<DL>
+<DD>The argument (angle) in polar coordinates.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="abs()"><!-- --></A><H3>
+abs</H3>
+<PRE>
+public final double <B>abs</B>()</PRE>
+<DL>
+<DD>The absolute value (length in polar coordinates).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="abs2()"><!-- --></A><H3>
+abs2</H3>
+<PRE>
+public final double <B>abs2</B>()</PRE>
+<DL>
+<DD>The absolute value squared.
+        re^2 + im^2
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="add(org.javia.arity.Complex)"><!-- --></A><H3>
+add</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>add</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Addition.
+        Modifies and returns this.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="sub(org.javia.arity.Complex)"><!-- --></A><H3>
+sub</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>sub</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Substraction.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="mul(org.javia.arity.Complex)"><!-- --></A><H3>
+mul</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>mul</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Multiplication.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="div(org.javia.arity.Complex)"><!-- --></A><H3>
+div</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>div</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Division.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="sqrt()"><!-- --></A><H3>
+sqrt</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>sqrt</B>()</PRE>
+<DL>
+<DD>Complex square root.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="mod(org.javia.arity.Complex)"><!-- --></A><H3>
+mod</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>mod</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Complex modulo (integer division remainder).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="gcd(org.javia.arity.Complex)"><!-- --></A><H3>
+gcd</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>gcd</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Complex GCD, Greatest Common Denominator.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="log()"><!-- --></A><H3>
+log</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>log</B>()</PRE>
+<DL>
+<DD>Complex natural logarithm.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="exp()"><!-- --></A><H3>
+exp</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>exp</B>()</PRE>
+<DL>
+<DD>Complex exponential.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="square()"><!-- --></A><H3>
+square</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>square</B>()</PRE>
+<DL>
+<DD>Complex square (x^2).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="pow(org.javia.arity.Complex)"><!-- --></A><H3>
+pow</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>pow</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;y)</PRE>
+<DL>
+<DD>Complex power (x^y == exp(y*log(x))).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="lgamma()"><!-- --></A><H3>
+lgamma</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>lgamma</B>()</PRE>
+<DL>
+<DD>Complex lgamma (log Gamma).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="factorial()"><!-- --></A><H3>
+factorial</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>factorial</B>()</PRE>
+<DL>
+<DD>Complex factorial, based on lgamma().
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="sin()"><!-- --></A><H3>
+sin</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>sin</B>()</PRE>
+<DL>
+<DD>sin(a+ib) = sin(a)*cosh(b) + i*cos(a)*sinh(b).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="sinh()"><!-- --></A><H3>
+sinh</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>sinh</B>()</PRE>
+<DL>
+<DD>sinh(a+ib) = sinh(a)*cos(b) + i*cosh(a)*sin(b).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="cos()"><!-- --></A><H3>
+cos</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>cos</B>()</PRE>
+<DL>
+<DD>cos(a+ib) = cos(a)cosh(b) - i*sin(a)sinh(b).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="cosh()"><!-- --></A><H3>
+cosh</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>cosh</B>()</PRE>
+<DL>
+<DD>cosh(a+ib) = cosh(a)cos(b) + i*sinh(a)sin(b).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="tan()"><!-- --></A><H3>
+tan</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>tan</B>()</PRE>
+<DL>
+<DD>tan(a+ib) = sin(2a)/(cos(2a)+cosh(2b) + i*sinh(2b)/(cos(2a)+cosh(2b)).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="tanh()"><!-- --></A><H3>
+tanh</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>tanh</B>()</PRE>
+<DL>
+<DD>tanh(a+ib) = sinh(2a)/(cosh(2a) + cos(2b)) + i*sin(2b)/(cosh(2a)+cos(2b)).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="asin()"><!-- --></A><H3>
+asin</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>asin</B>()</PRE>
+<DL>
+<DD>asin(x) = -i*log(sqrt(1-x^2)+ix).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="acos()"><!-- --></A><H3>
+acos</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>acos</B>()</PRE>
+<DL>
+<DD>acos(x) = -i*log(x + i*sqrt(1-x^2)).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="atan()"><!-- --></A><H3>
+atan</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>atan</B>()</PRE>
+<DL>
+<DD>atan(x) = i/2 * log((i+x)/(i-x)).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="asinh()"><!-- --></A><H3>
+asinh</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>asinh</B>()</PRE>
+<DL>
+<DD>asinh(x) = log(x+sqrt(x^2+1)).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="acosh()"><!-- --></A><H3>
+acosh</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>acosh</B>()</PRE>
+<DL>
+<DD>acosh(x) = log(x+sqrt(x^2-1)).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="atanh()"><!-- --></A><H3>
+atanh</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>atanh</B>()</PRE>
+<DL>
+<DD>atanh(x) = log((1+x)/(1-x))/2.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="combinations(org.javia.arity.Complex)"><!-- --></A><H3>
+combinations</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>combinations</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Combinations: C(n, k) == exp(lgamma(n) - lgamma(k) - lgamma(n-k)).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="permutations(org.javia.arity.Complex)"><!-- --></A><H3>
+permutations</H3>
+<PRE>
+public final <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>permutations</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;o)</PRE>
+<DL>
+<DD>Permutations: P(n, k) == exp(lgamma(n) - lgamma(n-k)).
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../org/javia/arity/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../org/javia/arity/CompiledFunction.html" title="class in org.javia.arity"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../org/javia/arity/Constant.html" title="class in org.javia.arity"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?org/javia/arity/Complex.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Complex.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

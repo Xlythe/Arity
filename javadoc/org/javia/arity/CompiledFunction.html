@@ -1,0 +1,589 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+CompiledFunction
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="CompiledFunction";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../org/javia/arity/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../org/javia/arity/ArityException.html" title="class in org.javia.arity"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?org/javia/arity/CompiledFunction.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="CompiledFunction.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+org.javia.arity</FONT>
+<BR>
+Class CompiledFunction</H2>
+<PRE>
+Object
+  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">org.javia.arity.Function</A>
+      <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>org.javia.arity.CompiledFunction</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <B>CompiledFunction</B><DT>extends <A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></DL>
+</PRE>
+
+<P>
+CompiledFunction is a function that was parsed from a string expression.
+   It is represented as a sequence of bytecodes which are executed in order to
+   evaluate the function.
+
+   <h3>Thread safety</h3>
+   CompiledFunction instances are thread-safe (don't require external locking),
+   By default the evaluation is globally serialized 
+   (it doesn't take advantage of multiple threads).<p>
+
+   You can achive parallel evaluation by creating an instance of EvalContext
+   for each thread, and passing the EvalContext as the last parameter of the
+   eval() methods.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#arity()">arity</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gives the arity of this function.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval()">eval</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluates an arity-0 function (a function with no arguments).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(org.javia.arity.Complex)">eval</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;x)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex evaluates a function with a single argument.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(org.javia.arity.Complex[])">eval</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>[]&nbsp;args)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex evaluates a function with an arbitrary number of arguments.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(org.javia.arity.Complex[], org.javia.arity.EvalContext)">eval</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>[]&nbsp;args,
+     <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(org.javia.arity.Complex, org.javia.arity.Complex)">eval</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;x,
+     <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;y)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complex evaluates a function with two arguments.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(org.javia.arity.Complex, org.javia.arity.Complex, org.javia.arity.EvalContext)">eval</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;x,
+     <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;y,
+     <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(org.javia.arity.Complex, org.javia.arity.EvalContext)">eval</A></B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;x,
+     <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(double)">eval</A></B>(double&nbsp;x)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluates a function with a single argument (arity == 1).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(double[])">eval</A></B>(double[]&nbsp;args)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluates the function given the argument values.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(double[], org.javia.arity.EvalContext)">eval</A></B>(double[]&nbsp;args,
+     <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(double, double)">eval</A></B>(double&nbsp;x,
+     double&nbsp;y)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluates a function with two arguments (arity == 2).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(double, double, org.javia.arity.EvalContext)">eval</A></B>(double&nbsp;x,
+     double&nbsp;y,
+     <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;double</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#eval(double, org.javia.arity.EvalContext)">eval</A></B>(double&nbsp;x,
+     <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#evalComplex()">evalComplex</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By default complex forwards to real eval is the arguments are real,        
+  otherwise returns NaN.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../org/javia/arity/CompiledFunction.html#toString()">toString</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="arity()"><!-- --></A><H3>
+arity</H3>
+<PRE>
+public int <B>arity</B>()</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../org/javia/arity/Function.html#arity()">Function</A></CODE></B></DD>
+<DD>Gives the arity of this function.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../org/javia/arity/Function.html#arity()">arity</A></CODE> in class <CODE><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the arity (the number of arguments). Arity >= 0.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="toString()"><!-- --></A><H3>
+toString</H3>
+<PRE>
+public String <B>toString</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>toString</CODE> in class <CODE>Object</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval()"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public double <B>eval</B>()</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../org/javia/arity/Function.html#eval()">Function</A></CODE></B></DD>
+<DD>Evaluates an arity-0 function (a function with no arguments).
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../org/javia/arity/Function.html#eval()">eval</A></CODE> in class <CODE><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the value of the function</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(double)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public double <B>eval</B>(double&nbsp;x)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../org/javia/arity/Function.html#eval(double)">Function</A></CODE></B></DD>
+<DD>Evaluates a function with a single argument (arity == 1).
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../org/javia/arity/Function.html#eval(double)">eval</A></CODE> in class <CODE><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(double, double)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public double <B>eval</B>(double&nbsp;x,
+                   double&nbsp;y)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../org/javia/arity/Function.html#eval(double, double)">Function</A></CODE></B></DD>
+<DD>Evaluates a function with two arguments (arity == 2).
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../org/javia/arity/Function.html#eval(double, double)">eval</A></CODE> in class <CODE><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(double[])"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public double <B>eval</B>(double[]&nbsp;args)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../org/javia/arity/Function.html#eval(double[])">Function</A></CODE></B></DD>
+<DD>Evaluates the function given the argument values.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../org/javia/arity/Function.html#eval(double[])">eval</A></CODE> in class <CODE><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>args</CODE> - array containing the arguments.
+<DT><B>Returns:</B><DD>the value of the function</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(double, org.javia.arity.EvalContext)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public double <B>eval</B>(double&nbsp;x,
+                   <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(double, double, org.javia.arity.EvalContext)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public double <B>eval</B>(double&nbsp;x,
+                   double&nbsp;y,
+                   <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(double[], org.javia.arity.EvalContext)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public double <B>eval</B>(double[]&nbsp;args,
+                   <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(org.javia.arity.Complex[], org.javia.arity.EvalContext)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>eval</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>[]&nbsp;args,
+                    <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="evalComplex()"><!-- --></A><H3>
+evalComplex</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>evalComplex</B>()</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../org/javia/arity/Function.html#evalComplex()">Function</A></CODE></B></DD>
+<DD>By default complex forwards to real eval is the arguments are real,        
+  otherwise returns NaN.
+  This allow calling any real functions as a (restricted) complex one.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../org/javia/arity/Function.html#evalComplex()">evalComplex</A></CODE> in class <CODE><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(org.javia.arity.Complex)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>eval</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;x)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../org/javia/arity/Function.html#eval(org.javia.arity.Complex)">Function</A></CODE></B></DD>
+<DD>Complex evaluates a function with a single argument.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../org/javia/arity/Function.html#eval(org.javia.arity.Complex)">eval</A></CODE> in class <CODE><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(org.javia.arity.Complex, org.javia.arity.Complex)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>eval</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;x,
+                    <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;y)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../org/javia/arity/Function.html#eval(org.javia.arity.Complex, org.javia.arity.Complex)">Function</A></CODE></B></DD>
+<DD>Complex evaluates a function with two arguments.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../org/javia/arity/Function.html#eval(org.javia.arity.Complex, org.javia.arity.Complex)">eval</A></CODE> in class <CODE><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(org.javia.arity.Complex[])"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>eval</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>[]&nbsp;args)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../org/javia/arity/Function.html#eval(org.javia.arity.Complex[])">Function</A></CODE></B></DD>
+<DD>Complex evaluates a function with an arbitrary number of arguments.
+<P>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../org/javia/arity/Function.html#eval(org.javia.arity.Complex[])">eval</A></CODE> in class <CODE><A HREF="../../../org/javia/arity/Function.html" title="class in org.javia.arity">Function</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(org.javia.arity.Complex, org.javia.arity.EvalContext)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>eval</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;x,
+                    <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="eval(org.javia.arity.Complex, org.javia.arity.Complex, org.javia.arity.EvalContext)"><!-- --></A><H3>
+eval</H3>
+<PRE>
+public <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A> <B>eval</B>(<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;x,
+                    <A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity">Complex</A>&nbsp;y,
+                    <A HREF="../../../org/javia/arity/EvalContext.html" title="class in org.javia.arity">EvalContext</A>&nbsp;context)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../org/javia/arity/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../org/javia/arity/ArityException.html" title="class in org.javia.arity"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../org/javia/arity/Complex.html" title="class in org.javia.arity"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../index.html?org/javia/arity/CompiledFunction.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="CompiledFunction.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>
