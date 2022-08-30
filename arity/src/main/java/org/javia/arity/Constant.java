@@ -34,7 +34,7 @@ public class Constant extends Function {
 
     //@Override
     /** Returns the complex constant as a real value. 
-        @see Complex.asReal()
+        @see Complex#asReal()
      */
     public double eval() {
         return value.asReal();
