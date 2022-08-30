@@ -1,5 +1,13 @@
 "Arity" arithmetic engine.
 
+Where to Download
+-----------------
+```groovy
+dependencies {
+  compile 'com.xlythe:arity:2.1.7'
+}
+```
+
 Copyright (C) 2007-2009 Mihai Preda.
 
 Licensed under the Apache License, Version 2.0 (the "License");
