@@ -8,6 +8,9 @@ dependencies {
 }
 ```
 
+License
+-----------------
+
 Copyright (C) 2007-2009 Mihai Preda.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,9 +25,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-
-Use:
+Use
+-----------------
 
 python build.py
-java -jar rel/arity-2.0.0.jar
-java -jar rel/arity-2.0.0.jar "1+2"
+java -jar rel/arity-2.1.7.jar
+java -jar rel/arity-2.1.7.jar "1+2"
