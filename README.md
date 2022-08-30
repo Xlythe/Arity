@@ -28,6 +28,8 @@ limitations under the License.
 Use
 -----------------
 
+```bash
 python build.py
 java -jar rel/arity-2.1.7.jar
 java -jar rel/arity-2.1.7.jar "1+2"
+```
