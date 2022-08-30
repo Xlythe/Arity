@@ -17,34 +17,28 @@
 package org.javia.arity;
 
 class Declaration {
-    private static final String NO_ARGS[] = {};
-    String name;
-    String args[];
-    int arity;
-    String expression;
+  private static final String[] NO_ARGS = {};
+  String name;
+  String[] args;
+  int arity;
+  String expression;
 
-    void parse(String source, Lexer lexer, DeclarationParser declParser) throws SyntaxException {
-        int equalPos = source.indexOf('=');
-        String decl;
+  void parse(String source, Lexer lexer, DeclarationParser declParser) throws SyntaxException {
+    int equalPos = source.indexOf('=');
+    String decl;
 
-        if (equalPos == -1) {
-            decl       = null;
-            expression = source;
-            name  = null;
-            args  = NO_ARGS;
-            arity = DeclarationParser.UNKNOWN_ARITY;            
-        } else {
-            decl       = source.substring(0, equalPos);
-            expression = source.substring(equalPos + 1);
-            lexer.scan(decl, declParser);
-            name  = declParser.name;
-            args  = declParser.argNames();
-            arity = declParser.arity;            
-        }
-        /*
-        if (arity == DeclarationParser.UNKNOWN_ARITY) {
-            args = IMPLICIT_ARGS;
-        }
-        */
+    if (equalPos == -1) {
+      expression = source;
+      name = null;
+      args = NO_ARGS;
+      arity = DeclarationParser.UNKNOWN_ARITY;
+    } else {
+      decl = source.substring(0, equalPos);
+      expression = source.substring(equalPos + 1);
+      lexer.scan(decl, declParser);
+      name = declParser.name;
+      args = declParser.argNames();
+      arity = declParser.arity;
     }
+  }
 }

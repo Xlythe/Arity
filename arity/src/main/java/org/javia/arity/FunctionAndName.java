@@ -16,18 +16,18 @@
 
 package org.javia.arity;
 
-/** 
-    Encapsulates together a function and its name.
-    Is used to return both the function and its name
-    from Compiler.compileWithName().
+/**
+ * Encapsulates together a function and its name.
+ * Is used to return both the function and its name
+ * from Compiler.compileWithName().
  */
 
 public class FunctionAndName {
-    public Function function;
-    public String name;
+  public Function function;
+  public String name;
 
-    public FunctionAndName(Function fun, String name) {
-        this.function = fun;
-        this.name     = name;
-    }
+  public FunctionAndName(Function fun, String name) {
+    this.function = fun;
+    this.name = name;
+  }
 }

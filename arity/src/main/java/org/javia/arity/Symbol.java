@@ -17,85 +17,81 @@
 package org.javia.arity;
 
 public class Symbol {
-    static final int CONST_ARITY = -3;
+  static final int CONST_ARITY = -3;
 
-    private String name;
-    private int arity;
+  private String name;
+  private int arity;
 
-    byte op;
-    Function fun;
-    double valueRe, valueIm;
-    boolean isConst = false;
+  byte op;
+  Function fun;
+  double valueRe, valueIm;
+  boolean isConst = false;
 
-    private Symbol(String name, int arity, byte op, boolean isConst, int dummy) {
-        setKey(name, arity);
-        this.op = op;
-        this.isConst = isConst;
+  private Symbol(String name, int arity, byte op, boolean isConst) {
+    setKey(name, arity);
+    this.op = op;
+    this.isConst = isConst;
+  }
+
+  Symbol(String name, Function fun) {
+    setKey(name, fun.arity());
+    this.fun = fun;
+  }
+
+  Symbol(String name, double re, boolean isConst) {
+    this(name, re, 0, isConst);
+  }
+
+  Symbol(String name, double re, double im, boolean isConst) {
+    setKey(name, CONST_ARITY);
+    valueRe = re;
+    valueIm = im;
+    this.isConst = isConst;
+  }
+
+  static Symbol makeArg(String name, int order) {
+    return new Symbol(name, CONST_ARITY, (byte) (VM.LOAD0 + order), false);
+  }
+
+  static Symbol makeVmOp(String name, int op) {
+    return new Symbol(name, VM.arity[op], (byte) op, true);
+  }
+
+  public String toString() {
+    return "Symbol '" + name + "' arity " + arity + " val " + valueRe + " op " + op;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getArity() {
+    return arity == CONST_ARITY ? 0 : arity;
+  }
+
+  static Symbol newEmpty(Symbol s) {
+    return new Symbol(s.name, s.arity, (byte) 0, false);
+  }
+
+  boolean isEmpty() {
+    return op == 0 && fun == null && valueRe == 0 && valueIm == 0;
+  }
+
+  Symbol setKey(String name, int arity) {
+    this.name = name;
+    this.arity = arity;
+    return this;
+  }
+
+  public boolean equals(Object other) {
+    if (other instanceof Symbol) {
+      Symbol symbol = (Symbol) other;
+      return name.equals(symbol.name) && arity == symbol.arity;
     }
+    return false;
+  }
 
-    Symbol(String name, Function fun) {
-        setKey(name, fun.arity());
-        this.fun = fun;
-	// this.comment = fun.comment;
-    }
-
-    Symbol(String name, double re, boolean isConst) {
-        this(name, re, 0, isConst);
-    }
-
-    Symbol(String name, double re, double im, boolean isConst) {
-        setKey(name, CONST_ARITY);
-        valueRe = re;
-        valueIm = im;
-        this.isConst = isConst;
-    }
-
-    static Symbol makeArg(String name, int order) {
-        return new Symbol(name, CONST_ARITY, (byte)(VM.LOAD0 + order), false, 0);
-    }
-
-    static Symbol makeVmOp(String name, int op) {
-        return new Symbol(name, (int)VM.arity[op], (byte)op, true, 0);
-    }
-
-    public String toString() {
-        return "Symbol '" + name + "' arity " + arity + " val " + valueRe + " op " + op;
-    }
-
-    public String getName() {
-	return name;
-    }
-
-    /*
-    public String getComment() {
-	return comment;
-    }
-    */
-
-    public int getArity() {
-	return arity == CONST_ARITY ? 0 : arity;
-    }
-
-    static Symbol newEmpty(Symbol s) {
-        return new Symbol(s.name, s.arity, (byte)0, false, 0);
-    }
-
-    boolean isEmpty() {
-        return op == 0 && fun == null && valueRe == 0 && valueIm == 0;
-    }
-
-    Symbol setKey(String name, int arity) {
-        this.name = name;
-        this.arity = arity;
-        return this;
-    }
-
-    public boolean equals(Object other) {
-        Symbol symbol = (Symbol) other;
-        return name.equals(symbol.name) && arity == symbol.arity;
-    }
-
-    public int hashCode() {
-        return name.hashCode() + arity;
-    }
+  public int hashCode() {
+    return name.hashCode() + arity;
+  }
 }

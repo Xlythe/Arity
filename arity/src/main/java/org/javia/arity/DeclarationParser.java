@@ -19,71 +19,71 @@ package org.javia.arity;
 import java.util.Vector;
 
 class DeclarationParser extends TokenConsumer {
-    static final String NO_ARGS[] = new String[0];
-    static final int UNKNOWN_ARITY = -2;
-    static final int MAX_ARITY = 5;
-        
-    String name;
-    int arity;
-    Vector args = new Vector();
+  static final String[] NO_ARGS = new String[0];
+  static final int UNKNOWN_ARITY = -2;
+  static final int MAX_ARITY = 5;
 
-    private SyntaxException exception;
+  String name;
+  int arity;
+  Vector<String> args = new Vector<>();
 
-    DeclarationParser(SyntaxException e) {
-        this.exception = e;
-    }
+  private final SyntaxException exception;
 
-    //@Override
-    void start() {
-        name = null;
-        arity = UNKNOWN_ARITY;
-        args.setSize(0);
-    }
+  DeclarationParser(SyntaxException e) {
+    this.exception = e;
+  }
 
-    //@Override
-    void push(Token token) throws SyntaxException {
-        switch (token.id) {
-        case Lexer.CALL:
-            if (name == null) {
-                name = token.name;
-                arity = 0;
-            } else {
-                throw exception.set("repeated CALL in declaration", token.position);
-            }
-            break;
+  @Override
+  void start() {
+    name = null;
+    arity = UNKNOWN_ARITY;
+    args.setSize(0);
+  }
 
-        case Lexer.CONST:
-            if (name == null) {
-                name = token.name;
-                arity = UNKNOWN_ARITY;
-            } else if (arity >= 0) {
-                args.addElement(token.name);
-                ++arity;
-                if (arity > MAX_ARITY) {
-                    throw exception.set("Arity too large " + arity, token.position);
-                }
-            } else {
-                throw exception.set("Invalid declaration", token.position);
-            }
-            break;
-
-        case Lexer.RPAREN:            
-        case Lexer.COMMA:
-        case Lexer.END:
-            break;
-
-        default:
-            throw exception.set("invalid token in declaration", token.position);
-        }
-    }
-    
-    String[] argNames() {
-        if (arity > 0) {
-            String argNames[] = new String[arity];
-            args.copyInto(argNames);
-            return argNames;
+  @Override
+  void push(Token token) throws SyntaxException {
+    switch (token.id) {
+      case Lexer.CALL:
+        if (name == null) {
+          name = token.name;
+          arity = 0;
         } else {
-            return NO_ARGS;
+          throw exception.set("repeated CALL in declaration", token.position);
         }
+        break;
+
+      case Lexer.CONST:
+        if (name == null) {
+          name = token.name;
+          arity = UNKNOWN_ARITY;
+        } else if (arity >= 0) {
+          args.addElement(token.name);
+          ++arity;
+          if (arity > MAX_ARITY) {
+            throw exception.set("Arity too large " + arity, token.position);
+          }
+        } else {
+          throw exception.set("Invalid declaration", token.position);
+        }
+        break;
+
+      case Lexer.RPAREN:
+      case Lexer.COMMA:
+      case Lexer.END:
+        break;
+
+      default:
+        throw exception.set("invalid token in declaration", token.position);
     }
+  }
+
+  String[] argNames() {
+    if (arity > 0) {
+      String[] argNames = new String[arity];
+      args.copyInto(argNames);
+      return argNames;
+    } else {
+      return NO_ARGS;
+    }
+  }
 }

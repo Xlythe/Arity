@@ -17,35 +17,35 @@
 package org.javia.arity;
 
 /**
-   Thrown when the expression can't be compiled, because it's either not
-   well-formed (e.g. "1+"), or because some simbols aren't defined (e.g. "foo+2").
-*/
+ * Thrown when the expression can't be compiled, because it's either not
+ * well-formed (e.g. "1+"), or because some simbols aren't defined (e.g. "foo+2").
+ */
 public class SyntaxException extends Exception {
-    /**
-       The expression which caused the error.
-     */
-    public String expression;
+  /**
+   * The expression which caused the error.
+   */
+  public String expression;
 
-    /**
-       Explicative message (cause of error).
-     */
-    public String message;
+  /**
+   * Explicative message (cause of error).
+   */
+  public String message;
 
-    /**
-       The position inside expression where the error occured.
-     */
-    public int position;
+  /**
+   * The position inside expression where the error occured.
+   */
+  public int position;
 
-    public String toString() {
-        return "SyntaxException: " + message 
-            + " in '" + expression 
+  public String toString() {
+    return "SyntaxException: " + message
+            + " in '" + expression
             + "' at position " + position;
-    }
+  }
 
-    SyntaxException set(String str, int pos) {
-        message  = str;
-        position = pos;
-        fillInStackTrace();
-        return this;
-    }
+  SyntaxException set(String str, int pos) {
+    message = str;
+    position = pos;
+    fillInStackTrace();
+    return this;
+  }
 }

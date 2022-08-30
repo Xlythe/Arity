@@ -17,34 +17,38 @@
 package org.javia.arity;
 
 /**
-   A constant presented as a function, always evaluates to the same value.
+ * A constant presented as a function, always evaluates to the same value.
  */
 public class Constant extends Function {
-    private Complex value;
+  private final Complex value;
 
-    public Constant(Complex o) {
-        value = new Complex(o);
-    }
+  public Constant(Complex o) {
+    value = new Complex(o);
+  }
 
-    //@Override
-    /** Returns the complex constant. */
-    public Complex evalComplex() {
-        return value;
-    }
+  /**
+   * Returns the complex constant.
+   */
+  @Override
+  public Complex evalComplex() {
+    return value;
+  }
 
-    //@Override
-    /** Returns the complex constant as a real value. 
-        @see Complex#asReal()
-     */
-    public double eval() {
-        return value.asReal();
-    }
+  /**
+   * Returns the complex constant as a real value.
+   *
+   * @see Complex#asReal()
+   */
+  @Override
+  public double eval() {
+    return value.asReal();
+  }
 
-    public String toString() {
-        return value.toString();
-    }
-    
-    public int arity() {
-        return 0;
-    }
+  public String toString() {
+    return value.toString();
+  }
+
+  public int arity() {
+    return 0;
+  }
 }

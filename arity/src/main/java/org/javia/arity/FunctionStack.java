@@ -17,35 +17,29 @@
 package org.javia.arity;
 
 class FunctionStack {
-    private Function[] data = new Function[8];
-    private int size = 0;
+  private Function[] data = new Function[8];
+  private int size = 0;
 
-    void clear() {
-        size = 0;
-    }
+  void clear() {
+    size = 0;
+  }
 
-    void push(Function b) {
-        if (size >= data.length) {
-            Function[] newData = new Function[data.length << 1];
-            System.arraycopy(data, 0, newData, 0, data.length);
-            data = newData;
-        }
-        data[size++] = b;
+  void push(Function b) {
+    if (size >= data.length) {
+      Function[] newData = new Function[data.length << 1];
+      System.arraycopy(data, 0, newData, 0, data.length);
+      data = newData;
     }
+    data[size++] = b;
+  }
 
-    /*
-    void pop(int cnt) {
-        size -= cnt;
-    }
-    */
+  Function pop() {
+    return data[--size];
+  }
 
-    Function pop() {
-        return data[--size];
-    }
-
-    Function[] toArray() {
-        Function[] trimmed = new Function[size];
-        System.arraycopy(data, 0, trimmed, 0, size);
-        return trimmed;
-    }
+  Function[] toArray() {
+    Function[] trimmed = new Function[size];
+    System.arraycopy(data, 0, trimmed, 0, size);
+    return trimmed;
+  }
 }

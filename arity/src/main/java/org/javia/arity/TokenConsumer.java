@@ -17,8 +17,8 @@
 package org.javia.arity;
 
 abstract class TokenConsumer {
-    void start() {
-    }
+  void start() {
+  }
 
-    abstract void push(Token token) throws SyntaxException;
+  abstract void push(Token token) throws SyntaxException;
 }

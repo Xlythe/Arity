@@ -17,35 +17,29 @@
 package org.javia.arity;
 
 class ByteStack {
-    private byte[] data = new byte[8];
-    private int size = 0;
+  private byte[] data = new byte[8];
+  private int size = 0;
 
-    void clear() {
-        size = 0;
-    }
+  void clear() {
+    size = 0;
+  }
 
-    void push(byte b) {
-        if (size >= data.length) {
-            byte[] newData = new byte[data.length << 1];
-            System.arraycopy(data, 0, newData, 0, data.length);
-            data = newData;
-        }
-        data[size++] = b;
+  void push(byte b) {
+    if (size >= data.length) {
+      byte[] newData = new byte[data.length << 1];
+      System.arraycopy(data, 0, newData, 0, data.length);
+      data = newData;
     }
+    data[size++] = b;
+  }
 
-    /*
-    void pop(int cnt) {
-        size -= cnt;
-    }
-    */
+  byte pop() {
+    return data[--size];
+  }
 
-    byte pop() {
-        return data[--size];
-    }
-
-    byte[] toArray() {
-        byte[] trimmed = new byte[size];
-        System.arraycopy(data, 0, trimmed, 0, size);
-        return trimmed;
-    }
+  byte[] toArray() {
+    byte[] trimmed = new byte[size];
+    System.arraycopy(data, 0, trimmed, 0, size);
+    return trimmed;
+  }
 }

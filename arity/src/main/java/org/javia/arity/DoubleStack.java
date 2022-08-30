@@ -17,59 +17,59 @@
 package org.javia.arity;
 
 class DoubleStack {
-    private double re[] = new double[8];
-    private double im[] = new double[8];
-    private int size = 0;
+  private double[] re = new double[8];
+  private double[] im = new double[8];
+  private int size = 0;
 
-    void clear() {
-        size = 0;
-    }
+  void clear() {
+    size = 0;
+  }
 
-    void push(double a, double b) {
-        if (size >= re.length) {
-            int newSize = re.length << 1;
-            double newRe[] = new double[newSize];
-            double newIm[] = new double[newSize];
-            System.arraycopy(re, 0, newRe, 0, re.length);
-            System.arraycopy(im, 0, newIm, 0, re.length);
-            re = newRe;
-            im = newIm;
-        }
-        re[size] = a;
-        im[size] = b;
-        ++size;
+  void push(double a, double b) {
+    if (size >= re.length) {
+      int newSize = re.length << 1;
+      double[] newRe = new double[newSize];
+      double[] newIm = new double[newSize];
+      System.arraycopy(re, 0, newRe, 0, re.length);
+      System.arraycopy(im, 0, newIm, 0, re.length);
+      re = newRe;
+      im = newIm;
     }
+    re[size] = a;
+    im[size] = b;
+    ++size;
+  }
 
-    void pop(int cnt) {
-        if (cnt > size) {
-            throw new Error("pop " + cnt + " from " + size);
-        }
-        size -= cnt;        
+  void pop(int cnt) {
+    if (cnt > size) {
+      throw new Error("pop " + cnt + " from " + size);
     }
+    size -= cnt;
+  }
 
-    void pop() {
-        --size;
-    }
+  void pop() {
+    --size;
+  }
 
-    double[] getRe() {
-        double trimmed[] = new double[size];
-        System.arraycopy(re, 0, trimmed, 0, size);
-        return trimmed;
-    }
+  double[] getRe() {
+    double[] trimmed = new double[size];
+    System.arraycopy(re, 0, trimmed, 0, size);
+    return trimmed;
+  }
 
-    double[] getIm() {
-        boolean allZero = true;
-        for (int i = 0; i < size; ++i) {
-            if (im[i] != 0) {
-                allZero = false;
-                break;
-            }
-        }
-        if (allZero) {
-            return null;
-        }
-        double trimmed[] = new double[size];
-        System.arraycopy(im, 0, trimmed, 0, size);
-        return trimmed;
+  double[] getIm() {
+    boolean allZero = true;
+    for (int i = 0; i < size; ++i) {
+      if (im[i] != 0) {
+        allZero = false;
+        break;
+      }
     }
+    if (allZero) {
+      return null;
+    }
+    double[] trimmed = new double[size];
+    System.arraycopy(im, 0, trimmed, 0, size);
+    return trimmed;
+  }
 }
