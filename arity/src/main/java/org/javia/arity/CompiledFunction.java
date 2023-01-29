@@ -233,7 +233,7 @@ public class CompiledFunction extends ContextFunction {
 
         case VM.SUB: {
           final double a = s[--p];
-          double res = a - (percentPC == pc - 1 ? s[p] * s[p + 1] : s[p + 1]);
+          double res = BigDecimalUtils.substract(a, (percentPC == pc-1 ? s[p] * s[p+1] : s[p+1]));
           if (Math.abs(res) < Math.ulp(a) * 1024) {
             // hack for "1.1-1-.1"
             res = 0;
