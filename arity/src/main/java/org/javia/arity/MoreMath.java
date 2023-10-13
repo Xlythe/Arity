@@ -29,7 +29,14 @@ class MoreMath {
   }
 
   public static double atanh(double x) {
-    return (x < 0) ? -atanh(-x) : 0.5 * Math.log(1. + (x + x) / (1 - x));
+    if (x < 0) {
+      return -atanh(-x);
+    }
+    if (x < 0.5) {
+      double twox = x + x;
+      return 0.5 * Math.log1p(twox + twox * x / (1 - x));
+    }
+    return 0.5 * Math.log(1. + (x + x) / (1 - x));
   }
 
   public static double trunc(double x) {
