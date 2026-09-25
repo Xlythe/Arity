@@ -21,10 +21,24 @@ class MoreMath {
   private static final double LOG2E = 1.4426950408889634074;
 
   public static double asinh(double x) {
-    return (x < 0) ? -asinh(-x) : Math.log(x + x + 1 / (Math.sqrt(x * x + 1) + x));
+    if (x < 0) {
+      return -asinh(-x);
+    }
+    if (x < 2) {
+      // log(x + sqrt(x^2 + 1)) == log1p(x + x^2 / (sqrt(x^2 + 1) + 1)). Taking the log of a
+      // number close to 1 loses every digit of a small x, which log1p keeps.
+      return Math.log1p(x + x * x / (Math.sqrt(x * x + 1) + 1));
+    }
+    return Math.log(x + x + 1 / (Math.sqrt(x * x + 1) + x));
   }
 
   public static double acosh(double x) {
+    if (x < 2) {
+      // With t = x - 1 (exact for x in [1, 2]), log(x + sqrt(x^2 - 1)) == log1p(t + sqrt(2t + t^2)).
+      // The log form loses most of its digits as x approaches 1. Anything below 1 is still NaN.
+      double t = x - 1;
+      return Math.log1p(t + Math.sqrt(t + t + t * t));
+    }
     return Math.log(x + x - 1 / (Math.sqrt(x * x - 1) + x));
   }
 
